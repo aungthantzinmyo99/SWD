@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Todo List</title>
+  <style>
+      
+      *{
+          font-family: sans-serif;
+          box-sizing: border-box;
+      }
+     .container{
+        border: 1px solid gray;
+        width: 300px;
+        background-color: #009688;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        margin: auto;
+       
+     } 
+     #input{
+        padding: 5px 10px;
+        margin: 10px;
+        background-color: #009688;
+        border: 0px;
+        color: white;
+     }
+     #list{
+         list-style-type: none;
+         padding: 0px;
+       
+        
+     }
+     #list li{
+        padding: 10px 15px;
+     }
+     
+     #list li:hover{
+        background-color: rgb(174, 240, 234);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: 0.5s;
+     }
+    
+     .add-box{
+
+     }
+     .addBtn{
+
+     }
+     ::placeholder{
+         color: white;
+         font-size: 15px;;
+     }
+     .listItem{
+        border: 1px solid gray;
+        width: 300px;
+        border-radius: 10px;
+        background-color: rgb(246, 252, 251);
+       
+        border-radius: 10px;
+
+    }
+    .listItem span{
+        color: seagreen;
+        margin-right: 30px;
+    }
+    .listItem i{
+    float: right;
+    }
+        .fa-trash-alt:before {
+     padding: 0px 3px;
+        color: red;
+    }
+    .fa-edit:before {
+      
+        color: #009688;
+    }
+    h1{
+        padding: 0px 20px;
+    }
+    
+  </style>
+        
+</head>
+<body>
+
+    <div class="container">
+        <h1>To Do List</h1>
+        <div class="add-box" id="addBox">
+            <input type="text" id="input" placeholder="Write your to do list...." >
+           <i class="fas fa-plus-circle fa-2x" class="addBtn" onclick="addList()"></i>
+        </div>
+   
+        <div class="listItem">
+            <ul id="list">
+               
+            </ul>
+        </div>
+    </div>
+        
+  
+    <script>
+        let i=1;
+        let minTextLength=4;
+        let input=document.getElementById("input");
+        let list=document.getElementById("list");
+
+       
+        function textFilter(x) {
+           if(x){
+            if(x.length>=minTextLength){
+                return x;
+            }else{
+                return false;
+            }
+        
+           }else{
+               return false;
+           }
+            
+        }
+        function showListBackUp(text) {
+      
+            list.innerHTML+= `
+            <li class="list-item animate__animated animate__fadeInDown" id="list${i}">
+            <div>
+            <span id="listText${i}">${text} <br><small>June25<small></span>
+           
+           <i class="fas fa-trash-alt" class="del-btn" onclick="deleteList(${i})"></i>
+           <i class="fas fa-edit" class="edit-btn" onclick="editList(${i})"></i>
+               
+            </li>
+            </div>`;
+            
+            i++;
+        
+           
+        }
+        function showList(text){
+            let li=document.createElement('li');
+            let span=document.createElement('span');
+            let content=document.createTextNode(text);
+            let contentsmall=document.createTextNode('June 25');
+            span.appendChild(content);
+            span.appendChild(contentsmall);
+            span.setAttribute('id',`listText${i}`);
+            li.classList='animate__animated animate__fadeInDown';
+            li.appendChild(span);
+            li.setAttribute('id',`list${i}`);
+            list.appendChild(li);
+
+
+            let firsticon=document.createElement('i');
+            firsticon.classList='del-btn';
+            firsticon.classList='fas fa-trash-alt';
+            firsticon.setAttribute('onclick',`deleteList(${i})`);
+            li.appendChild(firsticon);
+
+            let secondicon=document.createElement('i');
+            secondicon.classList='edit-btn';
+            secondicon.classList='fas fa-edit';
+            secondicon.setAttribute('onclick',`editList(${i})`);
+            li.appendChild(secondicon);
+            i++;    
+        }
+        
+        
+        function addList() {
+            //get
+            let inputText=textFilter(input.value);
+            //set
+           if(inputText){
+           showList(inputText);
+            input.value="";
+           }
+        }
+        
+        function deleteList(listId) {
+            let current=document.getElementById(`list${listId}`);
+            let currentText=document.getElementById(`listText${listId}`).innerHTML;
+            let deleteConfirm=confirm(`Are you sure want to delete ${currentText}`);
+            if(deleteConfirm){
+            
+            list.removeChild(current);
+            }else{
+                console.log("Delete cancel");
+            }
+            
+        }
+        function editList(listId) {
+            let current=document.getElementById(`listText${listId}`);
+            let newText=prompt("Say something",current.innerHTML);
+            if(textFilter(newText)){
+                current.innerHTML=newText;
+            }
+            
+        }
+      
+    </script>
+    
+</body>
+</html>

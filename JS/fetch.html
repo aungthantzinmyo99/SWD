@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td,tr{
+            padding: 10px 15px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Global Table</h3>
+    <table>
+        <tbody id="tb">
+           
+        </tbody>
+    </table>
+    <h3>Country Table</h3>
+    <p id="con"></p>
+    <table>
+        <thead>
+            <tr>
+            <td>No</td>
+            <td>Total Confirmed</td>
+            <td>Country</td>
+            <td>Total Deaths</td>
+            </tr>
+            
+        </thead>
+        <tbody id="ctb">
+           
+        </tbody>
+    </table>
+</head>
+<body>
+    
+<script>
+    let con=document.getElementById("con");
+    con.innerHTML="Loading";
+   fetch('https://api.covid19api.com/summary')
+  .then(response => response.json())
+  .then(data =>{
+    //    console.log(data)
+        con.innerHTML="Success";
+       let country=data.Countries;
+        let ctable=document.getElementById("ctb");
+        let i=1;
+        for(x of country){
+            ctable.innerHTML+=`
+            <tr>
+                <td>${i}</td>
+                <td>${x.TotalConfirmed}</td>
+                <td>${x.Country}</td>
+                <td>${x.TotalDeaths}</td>
+              
+                
+            </tr>
+            
+            `;
+            i++;
+        }
+  
+    });
+  
+</script>
+
+
+</body>
+</html>

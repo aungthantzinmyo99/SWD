@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS and HTML shape</title>
+    <style>
+        .square{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+           
+        }
+        .rounded{
+            border-radius: 5px;
+        }
+        .rec{
+            width: 130px;
+            height: 50px;
+            border: 1px solid black;
+        }
+        div{
+            display: inline-block;
+        }
+        .circle{
+            border-radius: 50px;
+        }
+        .img-circle{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .bg-img{
+           border: 1px solid black;
+           background-color: gray;
+           background: url(lulu.jpg);
+           background-size: cover;
+        }
+        .triangle{
+            border: 50px solid white;
+            border-bottom-color: cadetblue;
+            border-top-width: 50px;
+        }
+        .triangle-2{
+            border-right-color:cadetblue;
+        }
+        .env{
+            border: 50px solid rgb(51, 188, 212);
+            border-top-color: cornflowerblue;
+            border-bottom-width: 10px;
+            border-radius: 5px;
+            
+        }
+        .message {
+            width: 130px;
+            height: 50px;
+            border: 1px solid black;
+            margin-left: 200px;
+            position: relative;
+            background-color: blue;
+          
+          }
+          .message::before{
+            content: "";
+            border: 25px solid white;
+            position: absolute;
+            border-top-color: blue;
+            /* border-left-color: blue; */
+            border-right-color: blue;
+            border-bottom-color: blue;
+            left: -2px;
+          }
+          .message::after{
+            content: "";
+    /* background-color: gray; */
+            position: absolute;
+            border: 25px solid white;
+            border-left-color: blue;
+            left: 130px;
+          }
+
+    </style>
+</head>
+<body>
+        <div class="square"></div>
+        <div class="square rounded"></div>
+        <div class="rec"></div>
+        <hr>
+        <div class="square circle"></div>
+       <img src="sexy.jpg" alt="" class="img-circle">
+       <div class="bg-img img-circle"></div>
+       <hr>
+       <div class="triangle"></div>
+       <div class="triangle-2 triangle"></div>
+       <div class="env"></div><br><br><br>
+       <div class="message"></div>
+   
+   
+    
+</body>
+</html>

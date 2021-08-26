@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input"><br>
+    <ul id="list"></ul>
+
+
+
+    <script>
+      let input=document.getElementById("input");
+      let list=document.getElementById("list");
+      let id=1;
+      let k=Object.keys(localStorage);
+      k.sort();
+      console.log(k);
+      if(localStorage.length>0){
+        id=Number(k[k.length-1])+1;
+      }
+
+      function addToList(x,y){
+          let li=document.createElement("li");
+          let textnote=document.createTextNode("  "+x);
+          let btn=document.createElement("button");
+          let btnText=document.createTextNode("Delete");
+          btn.appendChild(btnText);
+          btn.setAttribute("onclick","del("+y+")");
+          let edit=document.createElement("button");
+          let editText=document.createTextNode("Edit");
+          edit.appendChild(editText);
+          edit.setAttribute("onclick","edit("+y+")");
+          li.appendChild(edit);
+          li.appendChild(btn);
+          li.appendChild(textnote);
+          li.setAttribute("id","list"+y);
+          list.appendChild(li);
+      }
+      function edit(x){
+        console.log(x);
+        let current=document.getElementById("list"+x);
+        let newText=prompt("Say something",current);
+        localStorage.setItem(current,newText);
+        
+      }
+      function del(x){
+        console.log(x);
+        localStorage.removeItem(x);
+        let current=document.getElementById("list"+x);
+        current.remove();
+      }
+      function save(x){
+        localStorage.setItem(id,x);
+        id++;
+      }
+        function showList(){
+           
+            k.map(function(el){
+                addToList(localStorage.getItem(el),el);
+            })
+            
+            
+        }
+        showList();
+    
+
+      document.addEventListener("keyup",function(e){
+        let note=input.value;
+        if(e.keyCode==13){
+            input.value="";
+         addToList(note);
+         save(note);
+        }
+      });
+     
+    </script>
+</body>
+</html>

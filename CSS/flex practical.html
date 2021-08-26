@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox Practical </title>
+   <style>
+        *{
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+       
+        .one{
+            height:50vh;
+            display: flex;
+            flex-grow: 1;
+            background-color: rgb(240, 249, 252);
+
+        }
+        .part{
+            flex-grow: 1;
+        }
+        .bgcolor-gray{
+            background-color: gray;
+        }
+        .bgcolor-skyblue{
+            background-color: skyblue;
+        }
+        .part.right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .part.left{
+
+        }
+        .two{
+            display: flex;
+            justify-content: space-evenly;
+            margin: auto;
+           
+        }
+        .two-part{
+            text-align: center;
+            background-color: #6be6a8;
+            padding: 20px 15px;
+            margin-top: -60px;
+            width: 300px;
+         
+        }
+   </style>
+</head>
+<body>
+    <section class="one">
+        <div class="part left bgcolor-gray"></div>
+        <div class="part right bgcolor-skyblue">
+            <div class="text" style="width: 300px;">
+                <h1>This is Title</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores voluptate culpa corporis, similique perspiciatis excepturi esse minima earum, obcaecati dolorem laborum repellat consectetur, libero non temporibus maiores recusandae accusantium optio?</p>
+            </div>
+        </div>
+    </section>
+    <section class="two">
+        <div class="two-part">
+            <h1>This is One</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ex nam tenetur fugit optio dolores? At eos et, in porro culpa sunt iusto dolorum veniam dicta magnam autem! Delectus, quia!</p>
+        </div>
+        <div class="two-part">
+            <h1>This is Two</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ex nam tenetur fugit optio dolores? At eos et, in porro culpa sunt iusto dolorum veniam dicta magnam autem! Delectus, quia!</p>
+        </div>
+        <div class="two-part">
+            <h1>This is Three</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ex nam tenetur fugit optio dolores? At eos et, in porro culpa sunt iusto dolorum veniam dicta magnam autem! Delectus, quia!</p>
+        </div>
+    </section>
+    
+</body>
+</html>

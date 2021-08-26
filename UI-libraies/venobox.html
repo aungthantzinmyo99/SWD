@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
+</head>
+<body>
+<div class="container">
+    <div class="row my-5 w-75">
+        <div class="col-12">
+            <div class="card-columns">
+                <div class="my-3">
+                    <a class="venobox" data-gall="myGallery" href="../Bootstrap/image/poe-3.jpg">
+                        <img src="../Bootstrap/image/poe-3.jpg" alt="image alt"/>
+                    </a>
+                </div>
+                <div class="my-3">
+                    <a class="venobox" data-gall="‌aa"href="../Bootstrap/image/poe-4.jpg">
+                        <img src="../Bootstrap/image/poe-4.jpg" alt="image alt"/>
+                    </a>
+                </div>
+                <div class="my-3">
+                    <a class="venobox" data-gall="myGallery" href="../Bootstrap/image/poe-5.jpg">
+                        <img src="../Bootstrap/image/poe-5.jpg" alt="image alt"/>
+                    </a>
+                </div>
+    
+                <div class="my-3">
+                    <a class="venobox"  data-gall="‌aa" href="../Bootstrap/image/poe-3.jpg">
+                        <img src="../Bootstrap/image/poe-4.jpg" alt="image alt"/>
+                    </a>
+                </div>
+                <div class="my-3">
+                    <a class="venobox" data-gall="myGallery" href="../Bootstrap/image/poe-4.jpg">
+                        <img src="../Bootstrap/image/poe-3.jpg" alt="image alt"/>
+                    </a>
+                </div>
+                <div class="my-3">
+                    <a class="venobox"  data-gall="‌aa" href="../Bootstrap/image/poe-5.jpg">
+                        <img src="../Bootstrap/image/poe-4.jpg" alt="image alt"/>
+                    </a>
+                </div>
+                <div class="my-3">
+                    <a class="venobox"  data-gall="‌aa" href="../Bootstrap/image/poe-4.jpg">
+                        <img src="../Bootstrap/image/poe-3.jpg" alt="image alt"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="venobox/venobox.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('.venobox').venobox({
+       
+    framewidth : '400px',                            // default: ''
+    frameheight: 'auto',                            // default: ''
+    border     : '3px',                             // default: '0'
+    bgcolor    : '#ffffff60',                          // default: '#fff'
+    titleattr  : 'data-title',                       // default: 'title'
+    numeratio  : true,                               // default: false
+    infinigall : true,                               // default: false
+    share      : ['facebook', 'twitter', 'download'] // default: []
+
+    }); 
+});
+
+</script>
+</body>
+</html>

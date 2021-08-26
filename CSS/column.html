@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS column</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 50px;
+        }
+        h1{
+            margin-bottom: 30px;
+            color: cornflowerblue;
+        }
+        .paragraph{
+            column-count: 3;
+            color: darkgrey;
+            column-rule: 1px solid #2196f3;
+            column-gap: 20px;
+            column-width: 200px;
+        }
+        .paragraph p{
+            margin-bottom: 20px;
+    
+        }
+        .full{
+            column-span: all;
+
+        }
+        @media  screen and (max-width:480px) {
+            body{
+                padding: 25px;
+            }
+            .full{
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Column Property</h1>
+    <div class="paragraph">
+        <p class="full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p class="full">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos laborum debitis placeat, maiores cumque, corrupti illo ducimus unde culpa consectetur quis minima quibusdam natus fuga autem? Quos tempora molestias atque.</p>
+
+    </div>
+    
+</body>
+</html>

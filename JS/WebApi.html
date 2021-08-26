@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Api</title>
+</head>
+<body>
+    <!-- <input type="file" id="upload" multiple>
+    <ul id="list"></ul> -->
+    <form action="" id="test">
+        <input type="text" name="username">
+        <input type="text" name="password" id="">
+        <button>Register</button>
+    </form>
+        <script>
+        // // let music=new Audio("audio/Love Story.mp3");
+
+        // document.getElementById("upload").addEventListener("change",function () {
+        //     let upload=this.files;
+        //     for(x of upload){
+        //         document.getElementById("list").innerHTML+=`<li>${x.name}</li>`;
+        //     }
+        //     console.log(upload);
+        // })
+        document.getElementById("test").addEventListener("submit",function (e) {
+            e.preventDefault();
+            let x=new FormData(this);
+            x.append('job','web developer');
+            for(let pair of x.entries()){
+                console.log(pair[0]+','+pair[1]);
+            }
+           
+        });
+        
+    </script>
+    
+</body>
+</html>

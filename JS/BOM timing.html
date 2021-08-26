@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Timing</title>
+</head>
+<body>
+    <h4>Timing Bomb</h4>
+    <ul>
+        <li>setTimeOut(function,milliseconds)</li>
+        <li>clearTimeOut(function)</li>
+    </ul>
+    <h4>Regular Timing</h4>
+    <ul>
+        <li>setInterval(function,milliseconds)</li>
+        <li>clearInterval</li>
+    </ul>
+    <p id="clock"></p>
+    <button id="stop" onclick="clickMe()">Stop</button>
+    <script>
+        let clock=document.getElementById("clock");
+        function showTime() {
+            let d=new Date();
+            clock.innerHTML=`${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+        }
+        let run=setInterval(showTime,1000);
+        // document.getElementById("stop").addEventListener("click",function () {
+        //     clearInterval(run);
+        // })
+        function clickMe() {
+            clearInterval(run); 
+        }
+    </script>
+</body>
+</html>

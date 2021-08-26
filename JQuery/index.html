@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .obj{
+            width: 300px;
+            height: 100px;
+            background-color: rgb(226, 154, 67);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<button class="hideBtn">Hide</button>
+<button class="showBtn">Show</button>
+<button class="showToggle">Toggle</button>
+<button class="fadeTo">FadeTo</button>
+<div class="obj"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$(".hideBtn").click(function(){
+    $(".obj").slideUp(1000);
+})
+$(".showBtn").click(function(){
+    $(".obj").slideDown(1000);
+})
+$(".showToggle").click(function(){
+    $(".obj").slideToggle(1000);
+})
+$(".fadeTo").click(function(){
+    $(".obj").fadeTo(1000,0.5);
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Array Method</title>
+</head>
+<body>
+    <h3>Most Popular Array Method</h3>
+    <ul>
+        <li>map()</li>
+        <li>filter()</li>
+        <li>reduce</li>
+        <li>array copy</li>
+        <li>array change</li>
+        <li>array cut</li>
+        <li>arrow function</li>
+        <li>filter data from array</li>
+        <li>link with method</li>
+        <li>reduce from adding array</li>
+    </ul>
+    <script>
+        let arr=["orange","mango","apple","grape"];
+        let numArr=["2","23","255","89","200"];
+        let apiArr=[
+            {id:1,name:"Mg Mg",age:20,room:"a",donate:300},
+            {id:2,name:"Aung Aung",age:30,room:"b",donate:200},
+            {id:3,name:"Hla Hla",age:26,room:"a",donate:800},
+            {id:4,name:"Mya Mya",age:22,room:"b",donate:700},
+        ];
+
+
+        // arr2=apiArr.map(function(el,index){
+        //    return {name:el.name,room:el.room};
+        // });
+        // arr2=apiArr.map(el=>el.name);
+    //    let arr2=apiArr.filter(el=>el.room==="a").map(el=>el.name);
+          let arr2=apiArr.filter(el=>el.room==="a").map(el=>el.donate).reduce((x,y)=>x+y);
+          
+        console.log(arr2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #upload{
+            display: none;
+        }
+        #uploader{
+            width: 900px;
+            margin: 20px auto;
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        #uploader img{
+            width: 100px;
+        }
+        #gallery{
+            width: 900px;
+            margin: 20px auto;
+            columns: 3 250px;
+        }
+        .gallery-img{
+            width:100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div id="uploader">
+            <img src="image/cloud-computing.png" alt="">
+        </div>
+        <input type="file" id="upload" accept="New folder/jpg,New folder/jpeg" multiple>
+        <div id="gallery"></div>
+    </form>
+   
+
+    <script>
+        let upload=document.getElementById("upload");
+        let gallery=document.getElementById("gallery");
+        let preview=document.getElementById("preview");
+        let uploader=document.getElementById("uploader");
+        uploader.addEventListener("click",function(){
+            upload.click();
+        })
+        function addToGallery(src){
+            let img=new Image();
+            img.src=src;
+            img.classList="gallery-img";
+            gallery.appendChild(img);
+        }
+
+
+        upload.addEventListener("change",function(){
+            let photo=this.files;
+            for(let i=1;i<photo.length;i++){
+            const reader=new FileReader();
+            reader.addEventListener("load",function(){
+            addToGallery(reader.result);
+            })
+            reader.readAsDataURL(photo[i]);
+            }
+           
+        })
+    </script>
+
+</body>
+</html>

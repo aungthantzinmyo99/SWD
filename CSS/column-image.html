@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Column</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .title{
+            margin-bottom: 20px;
+            color: darkseagreen;
+            margin: 30px auto;
+            font-weight: bolder;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 25px;
+
+        }
+        .gallery{
+            columns: 3 200px;
+            column-gap: 30px;
+            width: 900px;
+            margin: 20px auto;
+        }
+        .gallery-img:hover{
+            filter: contrast(150%);
+        }
+        .gallery-img{
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+        @media screen and (max-width:1024px) {
+            .gallery{
+                columns: 2 200px;
+            }
+        }
+        @media screen and (max-width:480px){
+            .gallery{
+               width: 100%;
+               padding: 0 20px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="title">SEXY Model <span style="color: deeppink;">Lu Lu Aung</span>  </div>
+    <div class="gallery">
+        <img src="lulu.jpg" alt="" class="gallery-img">
+        <img src="sexy.jpg" alt="" class="gallery-img">
+        <img src="cover.jpg" alt="" class="gallery-img">
+        <img src="lulu.jpg" alt="" class="gallery-img">
+        <img src="sexy.jpg" alt="" class="gallery-img">
+        <img src="cover.jpg" alt="" class="gallery-img">
+        <img src="lulu.jpg" alt="" class="gallery-img">
+        <img src="sexy.jpg" alt="" class="gallery-img">
+        <img src="cover.jpg" alt="" class="gallery-img">
+    </div>
+
+    
+</body>
+</html>

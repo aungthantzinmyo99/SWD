@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .one{
+            background-color: gray;
+            height: 50vh;
+            display: flex;
+         
+        }
+        .part.left{
+            background-color: gray;
+        }
+        .part.right{
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text{
+            width: 300px;
+        }
+      
+        .part{
+           flex-grow: 1;
+        }
+        .two{
+          display: flex;
+          margin: auto;
+          justify-content: space-between;
+          width: 990px;
+           
+        }
+        .two-part{
+            text-align: center;
+            padding: 20px 10px;
+            width: 300px;
+            margin-top: -60px;
+            background-color:rgb(238, 189, 97);
+            box-shadow: 0 0 20px #121212;
+        }
+        .three{
+            width: 900px;
+            margin: 50px auto;
+            
+            display: flex;
+            justify-content: center;
+        }
+        .part-three{
+            width: 500px;
+            text-align: center;
+            padding: 60px 20p
+        }
+        .four{
+            width: 900px;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+
+        }
+        .four-img{
+            margin-right: 30px;
+
+        }
+        .part-four{
+            width: 450px;
+        }
+        .five{
+            flex-direction: row-reverse;
+        }
+        .part-five{
+            text-align: right;
+            margin-right: 30px;
+            
+        }
+        .five-img{
+            padding: 20px;
+           
+        }
+        @media screen and (max-width:480px) {
+            .one,.two,.three,.four,.five{
+                flex-direction: column;
+            }
+            .div,.section{
+                width: 100% important!;
+            }
+            .three{
+                align-items: center;
+            }
+            .five-img{
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="one">
+        <div class="part left"></div>
+        <div class="part right">
+            <div class="text">
+                <h1>This is Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint animi repellendus obcaecati sequi magni perferendis unde sapiente minima dolorem assumenda. Ab doloribus totam ratione nihil iure laboriosam omnis obcaecati rem?</p>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="two">
+        <div class="two-part">
+            <h1>This is one</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam quasi cum nulla consequatur rerum nam, esse veritatis molestiae porro reiciendis, at ipsam aliquid nihil aut? Optio officia aspernatur nesciunt vitae?</p>
+        </div>
+        <div class="two-part">
+            <h1>This is one</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam quasi cum nulla consequatur rerum nam, esse veritatis molestiae porro reiciendis, at ipsam aliquid nihil aut? Optio officia aspernatur nesciunt vitae?</p>
+        </div>
+        <div class="two-part">
+            <h1>This is one</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam quasi cum nulla consequatur rerum nam, esse veritatis molestiae porro reiciendis, at ipsam aliquid nihil aut? Optio officia aspernatur nesciunt vitae?</p>
+        </div>
+    </section>
+    <section class="three">
+        <div class="part-three">
+            <h1>This is Three</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, natus placeat atque adipisci doloribus, blanditiis dolor dolores, a repellendus non quo qui modi nulla quaerat harum eligendi tempora. Aspernatur, necessitatibus.</p>
+        </div>
+    </section>
+    <section class="four">
+        <div class="four-img">
+            <img src="sexy.jpg" alt="">
+        </div>
+        <div class="part-four">
+            <h1>Sexy LU!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quibusdam libero, aliquid quisquam omnis quidem ipsa ipsum nihil ea, repudiandae cupiditate a. Nisi nulla expedita enim recusandae odio rerum eaque!</p>
+        </div>
+    </section>
+    <section class="four five">
+        <div class="four-img five-img">
+            <img src="lulu.jpg" alt="">
+        </div>
+        <div class="part-four part-five">
+            <h1>Sexy LU!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quibusdam libero, aliquid quisquam omnis quidem ipsa ipsum nihil ea, repudiandae cupiditate a. Nisi nulla expedita enim recusandae odio rerum eaque!</p>
+        </div>
+    </section>
+    
+</body>
+</html>
